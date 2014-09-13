@@ -106,7 +106,7 @@ class ListFeed
                 foreach($cols as $col) {
                     $vals[] = $col->__toString();
                 }
-                $rows[] = new ListEntry($entry, array_combine($colNames, $vals));
+                $rows[] = new ListEntry($entry, array_combine($colNames, array_slice($vals, 0, count($colNames))));
                 
             }
         }
