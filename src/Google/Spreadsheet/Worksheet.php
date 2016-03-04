@@ -134,7 +134,7 @@ class Worksheet
         $entry = '
             <entry xmlns="http://www.w3.org/2005/Atom"
                 xmlns:gs="http://schemas.google.com/spreadsheets/2006">
-              <gs:cell row="'.$row.'" col="'.$col.'" inputValue="'.$value.'"/>
+              <gs:cell row="'.$row.'" col="'.$col.'" inputValue="'.htmlspecialchars($value).'"/>
             </entry>
         ';
 
