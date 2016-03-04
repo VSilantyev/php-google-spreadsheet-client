@@ -95,7 +95,7 @@ class DefaultServiceRequest implements ServiceRequestInterface
 
         $info = curl_getinfo($ch);
         if((int)$info['http_code'] > 299) {
-            $exception = new Exception('Error in Google Request: '. $ret, $info['http_code']);
+            $exception = new Exception('Error in Google Request: '. $ret . ', request: ' . $this->request->getMethod() . ' ' . $this->request->getUrl() . ', post data: ' . $this->request->getPost(), $info['http_code']);
             $exception->setRequest($this->request);
             $this->resetRequestParams();
             throw $exception;
