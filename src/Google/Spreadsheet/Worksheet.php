@@ -139,7 +139,7 @@ class Worksheet
         ';
 
         if(is_null($this->editCellPostUrl)) {
-            $this->editCellPostUrl = $this->getCellFeed($row, $col, $row, $col)->getPostUrl();
+            $this->editCellPostUrl = $this->getCellFeed($row, $row, $col, $col)->getPostUrl();
         }
 
         $serviceRequest = ServiceRequestFactory::getInstance();
